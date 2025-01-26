@@ -1,0 +1,5 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 20C10 14.4772 14.4772 10 20 10H30C35.5228 10 40 14.4772 40 20C40 25.5228 35.5228 30 30 30H20C14.4772 30 10 25.5228 10 20Z" fill="#2563EB"/>
+    <path d="M45 20C45 14.4772 49.4772 10 55 10H65C70.5228 10 75 14.4772 75 20C75 25.5228 70.5228 30 65 30H55C49.4772 30 45 25.5228 45 20Z" fill="#3B82F6"/>
+    <text x="85" y="25" font-family="Arial" font-size="16" font-weight="bold" fill="#1F2937">API</text>
+</svg>

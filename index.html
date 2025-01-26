@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeodos API - Canopus Development</title>
+    <meta name="description" content="Enterprise-grade API for automated website generation by Canopus Development">
+    <link rel="canonical" href="https://aeodos.canopus.software">
+    <meta property="og:url" content="https://aeodos.canopus.software">
+    <meta property="og:site_name" content="Aeodos by Canopus">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="assets/images/logo.svg" alt="Aeodos">
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#playground">Try It Now</a>
+                <a href="#about">About</a>
+                <a href="#" class="api-key-btn" id="getApiKey">Get API Key</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Build Websites with AI</h1>
+                <p class="subtitle">Enterprise-Grade No-Code Website Generation API</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn" onclick="location.href='playground.html'">Try It Now</button>
+                    <button class="secondary-btn" onclick="location.href='#documentation'">View Docs</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-preview" id="codePreview"></div>
+            </div>
+        </section>
+
+        <section id="api-showcase" class="api-showcase">
+            <h2>API Integration</h2>
+            <div class="language-selector" data-language="CURL">
+                <select id="languageSelect" class="select-language" aria-label="Select programming language">
+                    <option value="curl">cURL</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="go">Go</option>
+                </select>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="authentication">Authentication</button>
+                <button class="tab-btn" data-tab="website-generation">Website Generation</button>
+                <button class="tab-btn" data-tab="project-status">Project Status</button>
+            </div>
+
+            <div class="code-examples">
+                <div class="code-panel active" id="authentication">
+                    <h3>Generate API Key</h3>
+                    <pre><code class="language-bash" id="authCode"></code></pre>
+                    <button class="copy-btn" data-target="authCode">Copy</button>
+                </div>
+
+                <div class="code-panel" id="website-generation">
+                    <h3>Generate Website</h3>
+                    <pre><code class="language-bash" id="generateCode"></code></pre>
+                    <button class="copy-btn" data-target="generateCode">Copy</button>
+                </div>
+
+                <div class="code-panel" id="project-status">
+                    <h3>Check Project Status</h3>
+                    <pre><code class="language-bash" id="statusCode"></code></pre>
+                    <button class="copy-btn" data-target="statusCode">Copy</button>
+                </div>
+            </div>
+
+            <div class="response-preview">
+                <h3>Response Preview</h3>
+                <pre><code class="language-json" id="responsePreview"></code></pre>
+            </div>
+        </section>
+
+        <section id="playground" class="playground-section">
+            <h2>Try It Now</h2>
+            <div class="playground-container">
+                <div class="playground-editor">
+                    <div class="editor-header">
+                        <h3>Website Configuration</h3>
+                        <div class="editor-controls">
+                            <button class="run-btn" id="runCode">Generate Website</button>
+                            <button class="reset-btn" id="resetCode">Reset</button>
+                        </div>
+                    </div>
+                    <div class="editor-body">
+                        <div class="config-form">
+                            <div class="form-group">
+                                <label for="websiteDescription">Website Description</label>
+                                <textarea id="websiteDescription" rows="4" placeholder="Describe your website (e.g., A modern business website with contact form)"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="websiteStyle">Style</label>
+                                <select id="websiteStyle">
+                                    <option value="modern">Modern</option>
+                                    <option value="minimal">Minimal</option>
+                                    <option value="corporate">Corporate</option>
+                                    <option value="creative">Creative</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Pages</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="home" checked disabled> Home
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="about"> About
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="contact"> Contact
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="services"> Services
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="playground-preview">
+                    <div class="preview-header">
+                        <h3>Preview</h3>
+                        <div class="preview-controls">
+                            <select id="previewMode">
+                                <option value="response">API Response</option>
+                                <option value="preview">Website Preview</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="preview-body">
+                        <pre><code class="language-json" id="previewCode"></code></pre>
+                        <div class="website-preview" id="websitePreview" style="display: none;">
+                            <iframe id="previewFrame" title="Website Preview"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="playground-footer">
+                <p class="note">Note: This is a demo environment. For full access, <a href="#" id="getPlaygroundKey">get your API key</a>.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-hero">
+                <div class="about-hero-content">
+                    <h2>Innovation Meets Collaboration</h2>
+                    <p class="subtitle">Advancing AI, ML, and Open-Source Development</p>
+                </div>
+                <div class="cosmic-particles" id="particlesContainer"></div>
+            </div>
+
+            <div class="about-container">
+                <div class="vision-section">
+                    <h3>Our Vision</h3>
+                    <p>At Canopus Development, we envision a future where technology transcends boundaries and becomes a universal enabler of creativity, learning, and progress.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card" data-aos="fade-up">
+                            <span class="stat-number" data-value="10">0</span>
+                            <span class="stat-label">Open Source Projects</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <span class="stat-number" data-value="99.9">0</span>
+                            <span class="stat-label">Uptime Percentage</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <span class="stat-number" data-value="5000">0</span>
+                            <span class="stat-label">GitHub Stars</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card" data-aos="fade-right">
+                        <div class="service-icon ai"></div>
+                        <h4>AI/ML Solutions</h4>
+                        <p>Intelligent systems addressing complex real-world challenges across industries.</p>
+                    </div>
+                    <div class="service-card" data-aos="fade-right" data-aos-delay="100">
+                        <div class="service-icon opensource"></div>
+                        <h4>Open-Source Projects</h4>
+                        <p>Contributing frameworks, tools, and platforms to empower innovation.</p>
+                    </div>
+                    <div class="service-card" data-aos="fade-right" data-aos-delay="200">
+                        <div class="service-icon tools"></div>
+                        <h4>Developer Tools</h4>
+                        <p>Enhancing productivity and streamlining development workflows.</p>
+                    </div>
+                </div>
+
+                <div class="projects-showcase">
+                    <h3>Key Projects</h3>
+                    <div class="projects-grid">
+                        <div class="project-card" data-project="gatria">
+                            <div class="project-content">
+                                <div class="project-info">
+                                    <h4>Gatria</h4>
+                                    <p>Comprehensive development toolkit equipped with features tailored for modern application development.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Modern Dev</span>
+                                        <span class="tech-tag">Toolkit</span>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/Canopus-Development/Gatria" class="project-link">
+                                    <span class="github-icon"></span>
+                                    Explore Project
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-project="nova-lite">
+                            <div class="project-content">
+                                <div class="project-info">
+                                    <h4>Nova-Lite</h4>
+                                    <p>A lightweight yet powerful application framework designed for optimal performance.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Framework</span>
+                                        <span class="tech-tag">Performance</span>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/Canopus-Development/Nova-Lite" class="project-link">
+                                    <span class="github-icon"></span>
+                                    Explore Project
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-project="nova">
+                            <div class="project-content">
+                                <div class="project-info">
+                                    <h4>Nova</h4>
+                                    <p>A robust framework that scales effortlessly to meet the demands of complex applications.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Enterprise</span>
+                                        <span class="tech-tag">Scalable</span>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/Canopus-Development/Nova" class="project-link">
+                                    <span class="github-icon"></span>
+                                    Explore Project
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Add remaining project cards similarly -->
+                    </div>
+                </div>
+
+                <div class="community-section">
+                    <h3>Join Our Community</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/Canopus-Development" class="social-link github">
+                            <span class="social-icon"></span>
+                            GitHub
+                        </a>
+                        <a href="https://discord.gg/JUhv27kzcJ" class="social-link discord">
+                            <span class="social-icon"></span>
+                            Discord
+                        </a>
+                        <a href="https://twitter.com/canopusdev" class="social-link twitter">
+                            <span class="social-icon"></span>
+                            Twitter
+                        </a>
+                        <a href="https://instagram.com/canopusdev" class="social-link instagram">
+                            <span class="social-icon"></span>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Enterprise Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon ai"></div>
+                    <h3>AI-Powered Generation</h3>
+                    <p>Advanced algorithms for intelligent website creation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon security"></div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-grade security with API key authentication</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon scale"></div>
+                    <h3>Scalable Architecture</h3>
+                    <p>Built for high-performance and reliability</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Aeodos API</h4>
+                <p>© 2024 Canopus Development</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <a href="https://github.com/Canopus-Development/aeodos">GitHub</a>
+                <a href="http://api.canopus.software/aeodos/docs">API Docs</a>
+                <a href="https://aeodos.canopus.software/documentation">Documentation</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="apiKeyModal" class="modal">
+        <div class="modal-content">
+            <!-- Modal content will be injected via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Scripts with proper initialization order -->
+    <script>
+        // Global namespace to prevent collisions
+        window.Aeodos = {
+            initialized: false,
+            init: function() {
+                if (this.initialized) return;
+                
+                // Initialize Prism with minimal configuration
+                window.Prism = {
+                    manual: true,
+                    disableWorkerMessageHandler: true,
+                    languages: {
+                        javascript: {
+                            'comment': /\/\/.*|\/\*[\s\S]*?\*\//,
+                            'string': /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+                            'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,
+                            'boolean': /\b(?:true|false)\b/,
+                            'number': /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
+                            'operator': /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
+                            'punctuation': /[{}[\];(),.:]/
+                        },
+                        json: {
+                            'property': /"(?:\\.|[^\\"\r\n])*"(?=\s*:)/,
+                            'string': /"(?:\\.|[^\\"\r\n])*"/,
+                            'number': /-?\d+\.?\d*/,
+                            'punctuation': /[{}[\],]/,
+                            'operator': /:/,
+                            'boolean': /\b(?:true|false|null)\b/,
+                            'keyword': /\b(?:true|false|null)\b/
+                        }
+                    },
+                    highlight: function(text, grammar, language) {
+                        const tokens = this.tokenize(text, grammar);
+                        return this.stringify(tokens, language);
+                    },
+                    highlightElement: function(element) {
+                        const text = element.textContent;
+                        const grammar = this.languages[element.className.match(/language-(\w+)/)[1]];
+                        element.innerHTML = this.highlight(text, grammar, element.className);
+                    },
+                    highlightAll: function() {
+                        document.querySelectorAll('pre code[class*="language-"]').forEach(element => {
+                            this.highlightElement(element);
+                        });
+                    },
+                    tokenize: function(text, grammar) {
+                        const tokens = [];
+                        let match;
+                        for (const token in grammar) {
+                            if (match = grammar[token].exec(text)) {
+                                tokens.push({
+                                    type: token,
+                                    content: match[0]
+                                });
+                                text = text.slice(match[0].length);
+                            }
+                        }
+                        if (text) tokens.push({ type: 'text', content: text });
+                        return tokens;
+                    },
+                    stringify: function(tokens) {
+                        return tokens.map(token => 
+                            token.type === 'text' ? token.content :
+                            `<span class="token ${token.type}">${token.content}</span>`
+                        ).join('');
+                    }
+                };
+                
+                this.initialized = true;
+            }
+        };
+    </script>
+    
+    <!-- Core libraries -->
+    <script src="assets/js/prism.js"></script>
+    
+    <!-- Application scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/codeExamples.js"></script>
+    <script src="assets/js/codePreview.js"></script>
+    <script src="assets/js/playground.js"></script>
+    
+    <script>
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            Aeodos.init();
+        });
+    </script>
+</body>
+</html>

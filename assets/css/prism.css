@@ -1,0 +1,77 @@
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #1F2937;
+    background: none;
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;
+    font-size: 0.9em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    border-radius: 8px;
+    background: #F8FAFC;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #607D8B;
+    font-style: italic;
+}
+
+.token.function {
+    color: var(--electric-orchid);
+}
+
+.token.keyword {
+    color: var(--ethereal-teal);
+}
+
+.token.string {
+    color: var(--solar-flare);
+}
+
+.token.variable {
+    color: #DC2626;
+}
+
+.token.boolean,
+.token.number {
+    color: var(--luminous-amber);
+}
+
+.token.property {
+    color: var(--ethereal-teal);
+}
+
+.token.operator {
+    color: #374151;
+}
+
+.token.punctuation {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark theme specific adjustments for playground */
+.playground-section pre[class*="language-"] {
+    background: rgba(26, 43, 60, 0.95);
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.playground-section code[class*="language-"] {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: none;
+}
