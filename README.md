@@ -36,7 +36,7 @@ Aoede is a Python-based open-source project that leverages AI for automated webs
 
 ```bash
 # Clone the repository
-git clone https://github.com/canopus-development/Aoede.git
+git clone https://github.com/Kanopusdev/Aoede.git
 cd Aoede
 
 # Create and activate virtual environment
@@ -217,7 +217,7 @@ Currently supported AI models:
 <p align="center">Built with ❤️ by <a href="https://kanopus.org">Kanopus Development</a></p>
 
 <p align="center">
-<a href="https://github.com/canopus-development/Aoede/issues">Report Bug</a> · 
+<a href="https://github.com/Kanopusdev/Aoede/issues">Report Bug</a> · 
 <a href="https://discord.gg/JUhv27kzcJ">Join Discord</a> · 
 <a href="https://Aoede.canopus.software/docs">Documentation</a>
 </p>
