@@ -193,8 +193,6 @@ For production deployment, see our [deployment guide](docs/deployment/README.md)
 - SQL injection protection
 - XSS prevention
 
-Report security issues to security@canopus.software
-
 ## 📝 License
 
 MIT License - see [LICENSE](LICENSE) for details
@@ -202,7 +200,7 @@ MIT License - see [LICENSE](LICENSE) for details
 ## 🤖 AI Models Support
 
 Currently supported AI models:
-- OpenAI GPT-3.5/4
+- OpenAI GPT-4o
 - Local LLaMA models
 - Custom fine-tuned models
 
@@ -216,7 +214,7 @@ Currently supported AI models:
 
 ---
 
-<p align="center">Built with ❤️ by <a href="https://canopus.software">Canopus Development</a></p>
+<p align="center">Built with ❤️ by <a href="https://kanopus.org">Kanopus Development</a></p>
 
 <p align="center">
 <a href="https://github.com/canopus-development/Aoede/issues">Report Bug</a> · 
