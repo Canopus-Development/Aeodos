@@ -68,7 +68,7 @@ class AdminAnalytics:
             logger.error(f"Plan popularity calculation failed: {str(e)}")
             raise
 
-router = APIRouter(prefix="/aeodos/admin", tags=["admin"])
+router = APIRouter(prefix="/Aoede/admin", tags=["admin"])
 
 @router.post(
     "/plans",

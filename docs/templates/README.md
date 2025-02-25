@@ -1,7 +1,7 @@
-# Aeodos Template System
+# Aoede Template System
 
 ## Overview
-Aeodos uses a modular template system to create dynamic, responsive websites. It combines standard HTML/CSS with AI-driven layout suggestions.
+Aoede uses a modular template system to create dynamic, responsive websites. It combines standard HTML/CSS with AI-driven layout suggestions.
 
 ## Template Hierarchy
 ```
@@ -87,7 +87,7 @@ The AI engine processes these templates by:
 ## Usage Example
 
 ```python
-from aeodos.template import Template
+from Aoede.template import Template
 
 # Load template
 template = Template.load('pages/home.html')

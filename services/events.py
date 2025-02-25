@@ -63,12 +63,12 @@ class DiscordNotifier:
         }
         
         return {
-            "title": f"Aeodos Event: {event_type}",
+            "title": f"Aoede Event: {event_type}",
             "color": color_map.get(event_type, 0x808080),
             "description": cls._format_description(event_data),
             "timestamp": datetime.utcnow().isoformat(),
             "footer": {
-                "text": "Aeodos AI Platform"
+                "text": "Aoede AI Platform"
             },
             "fields": cls._create_fields(event_data)
         }

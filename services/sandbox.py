@@ -11,8 +11,8 @@ logger = logging.getLogger(__name__)
 class SandboxManager:
     def __init__(self):
         self.docker_client = docker.from_env()
-        self.base_image = "aeodos/sandbox:latest"
-        self.temp_dir = Path("/tmp/aeodos/sandbox")
+        self.base_image = "Aoede/sandbox:latest"
+        self.temp_dir = Path("/tmp/Aoede/sandbox")
         self.temp_dir.mkdir(parents=True, exist_ok=True)
     
     async def create_sandbox(self, project_id: str) -> str:

@@ -2,11 +2,11 @@
 
 ## Overview
 
-The Aeodos API provides endpoints for website generation using AI. This reference documents all available endpoints, request/response formats, and authentication methods.
+The Aoede API provides endpoints for website generation using AI. This reference documents all available endpoints, request/response formats, and authentication methods.
 
 ## Base URL
 ```
-http://api.canopus.software/aeodos
+http://api.canopus.software/Aoede
 ```
 
 ## Authentication
@@ -58,7 +58,7 @@ All errors follow this format:
 
 ### Generate Website
 ```bash
-curl -X POST "http://api.canopus.software/aeodos/generate" \
+curl -X POST "http://api.canopus.software/Aoede/generate" \
      -H "Authorization: Bearer YOUR_API_KEY" \
      -H "Content-Type: application/json" \
      -d '{
@@ -70,7 +70,7 @@ curl -X POST "http://api.canopus.software/aeodos/generate" \
 
 ### Check Status
 ```bash
-curl "http://api.canopus.software/aeodos/status/GENERATION_ID" \
+curl "http://api.canopus.software/Aoede/status/GENERATION_ID" \
      -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -81,7 +81,7 @@ curl "http://api.canopus.software/aeodos/status/GENERATION_ID" \
 {
     "id": "gen_abc123",
     "status": "completed",
-    "url": "https://preview.aeodos.dev/abc123",
+    "url": "https://preview.Aoede.dev/abc123",
     "created_at": "2024-01-20T12:00:00Z"
 }
 ```

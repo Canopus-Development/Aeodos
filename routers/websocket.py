@@ -99,7 +99,7 @@ class WebSocketManager:
             except Exception:
                 break
 
-@router.websocket("/aeodos/ws/notifications")
+@router.websocket("/Aoede/ws/notifications")
 async def websocket_endpoint(
     websocket: WebSocket,
     client_id: str,
@@ -134,7 +134,7 @@ async def websocket_endpoint(
         logger.error(f"WebSocket error: {str(e)}")
         await websocket.close(code=1008)  # Policy violation
 
-@router.websocket("/aeodos/ws/admin")
+@router.websocket("/Aoede/ws/admin")
 async def admin_websocket_endpoint(
     websocket: WebSocket,
     api_key: str,

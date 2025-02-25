@@ -5,7 +5,7 @@ Generate a new website based on provided specifications.
 ## Endpoint
 
 ```
-POST /aeodos/generate/website
+POST /Aoede/generate/website
 ```
 
 ## Authentication
@@ -58,7 +58,7 @@ Authorization: Bearer YOUR_API_KEY
     "project_id": "proj_abc123",
     "status": "queued",
     "estimated_time": "30 seconds",
-    "status_url": "/aeodos/projects/proj_abc123/status"
+    "status_url": "/Aoede/projects/proj_abc123/status"
 }
 ```
 
@@ -97,7 +97,7 @@ import json
 async def generate_website():
     async with httpx.AsyncClient() as client:
         response = await client.post(
-            "https://api.canopus.software/aeodos/generate/website",
+            "https://api.canopus.software/Aoede/generate/website",
             headers={
                 "Authorization": "Bearer YOUR_API_KEY",
                 "Content-Type": "application/json"

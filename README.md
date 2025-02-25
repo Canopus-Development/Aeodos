@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="assets/images/logo.svg" alt="Aeodos" width="200" />
-  <h1>Aeodos</h1>
+  <img src="assets/images/logo.svg" alt="Aoede" width="200" />
+  <h1>Aoede</h1>
   <p>AI-Powered Website Generation Engine | FastAPI-based Open Source Project</p>
 
   [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg?style=flat-square)](https://www.python.org/downloads/)
@@ -12,7 +12,7 @@
 
 ## 🌟 Overview
 
-Aeodos is a Python-based open-source project that leverages AI for automated website generation. Built with FastAPI and modern Python practices, it provides a robust foundation for AI-driven web development.
+Aoede is a Python-based open-source project that leverages AI for automated website generation. Built with FastAPI and modern Python practices, it provides a robust foundation for AI-driven web development.
 
 ## ⚡️ Key Features
 
@@ -36,8 +36,8 @@ Aeodos is a Python-based open-source project that leverages AI for automated web
 
 ```bash
 # Clone the repository
-git clone https://github.com/canopus-development/aeodos.git
-cd aeodos
+git clone https://github.com/canopus-development/Aoede.git
+cd Aoede
 
 # Create and activate virtual environment
 python -m venv venv
@@ -72,7 +72,7 @@ uvicorn main:app --reload --port 7297
 ## 📚 Project Structure
 
 ```
-aeodos/
+Aoede/
 ├── app/
 │   ├── api/          # API endpoints
 │   ├── core/         # Core functionality
@@ -97,7 +97,7 @@ DEBUG=True
 WORKERS=4
 
 # Database
-DATABASE_URL=postgresql://user:pass@localhost/aeodos
+DATABASE_URL=postgresql://user:pass@localhost/Aoede
 
 # Redis
 REDIS_URL=redis://localhost:6379
@@ -159,7 +159,7 @@ import httpx
 
 async with httpx.AsyncClient() as client:
     response = await client.post(
-        "https://api.canopus.software/aeodos/demo/generate",
+        "https://api.canopus.software/Aoede/demo/generate",
         json={
             "description": "Modern business website",
             "style": "minimal",
@@ -219,7 +219,7 @@ Currently supported AI models:
 <p align="center">Built with ❤️ by <a href="https://canopus.software">Canopus Development</a></p>
 
 <p align="center">
-<a href="https://github.com/canopus-development/aeodos/issues">Report Bug</a> · 
+<a href="https://github.com/canopus-development/Aoede/issues">Report Bug</a> · 
 <a href="https://discord.gg/JUhv27kzcJ">Join Discord</a> · 
-<a href="https://aeodos.canopus.software/docs">Documentation</a>
+<a href="https://Aoede.canopus.software/docs">Documentation</a>
 </p>

@@ -43,21 +43,21 @@ async def lifespan(app: FastAPI):
     try:
         # Startup
         asyncio.create_task(async_handler.process_queue())
-        logger.info("Aeodos API started successfully")
+        logger.info("Aoede API started successfully")
         yield
         # Shutdown
-        logger.info("Shutting down Aeodos API")
+        logger.info("Shutting down Aoede API")
     except Exception as e:
         logger.error(f"Lifespan error: {str(e)}")
         raise
 
 # Initialize FastAPI with enhanced configuration
 app = FastAPI(
-    title="Aeodos API",
+    title="Aoede API",
     description="Enterprise-Grade AI-Powered No-Code Website Builder API",
     version="0.1.0",
-    docs_url="/aeodos/docs",
-    redoc_url="/aeodos/redoc",
+    docs_url="/Aoede/docs",
+    redoc_url="/Aoede/redoc",
     lifespan=lifespan,
     openapi_tags=[
         {"name": "websites", "description": "Website generation operations"},
@@ -65,7 +65,7 @@ app = FastAPI(
         {"name": "monitoring", "description": "System monitoring endpoints"},
         {"name": "generation", "description": "Code generation operations"}
     ],
-    openapi_url="/aeodos/openapi.json",
+    openapi_url="/Aoede/openapi.json",
     servers=[
         {"url": "https://api.canopus.software", "description": "Production server"},
         {"url": "http://localhost:8000", "description": "Development server"}
@@ -109,7 +109,7 @@ class WebsiteRequest(BaseModel):
     style: Optional[str] = "modern"
     pages: Optional[list] = ["home"]
 
-class AeodosWebsite(BaseModel):
+class AoedeWebsite(BaseModel):
     name: str
     description: str
     style: Optional[str] = "modern"
@@ -132,7 +132,7 @@ class ProjectRequest(GenerateRequest):
 class RequestValidator:
     """Validate and sanitize incoming requests"""
     @staticmethod
-    def validate_website_data(website: AeodosWebsite) -> None:
+    def validate_website_data(website: AoedeWebsite) -> None:
         if len(website.name) < 3:
             raise HTTPException(
                 status_code=422,
@@ -165,7 +165,7 @@ class AsyncRequestHandler:
 async_handler = AsyncRequestHandler()
 
 # API Key Management Routes
-@app.post("/aeodos/keys/generate", tags=["auth"])
+@app.post("/Aoede/keys/generate", tags=["auth"])
 async def generate_new_api_key(
     request: APIKeyRequest,
     background_tasks: BackgroundTasks,
@@ -208,7 +208,7 @@ async def generate_new_api_key(
         logger.error(f"API key generation failed: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
-@app.post("/aeodos/keys/regenerate", tags=["auth"])
+@app.post("/Aoede/keys/regenerate", tags=["auth"])
 async def regenerate_api_key(
     request: APIKeyRegenRequest,
     background_tasks: BackgroundTasks,
@@ -248,7 +248,7 @@ async def regenerate_api_key(
         logger.error(f"API key regeneration failed: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
-@app.get("/aeodos/usage", tags=["monitoring"])
+@app.get("/Aoede/usage", tags=["monitoring"])
 async def get_api_usage(
     api_key: str = Depends(verify_api_key),
     db: Session = Depends(get_db)
@@ -275,7 +275,7 @@ async def get_api_usage(
         raise HTTPException(status_code=500, detail=str(e))
 
 # Generation Routes
-@app.post("/aeodos/generate/frontend", tags=["generation"])
+@app.post("/Aoede/generate/frontend", tags=["generation"])
 @rate_limit(max_requests=20, time_window=3600)
 async def generate_frontend(
     request: Request,
@@ -289,7 +289,7 @@ async def generate_frontend(
         request, version, data, api_key, "frontend"
     )
 
-@app.post("/aeodos/generate/backend", tags=["generation"])
+@app.post("/Aoede/generate/backend", tags=["generation"])
 @rate_limit(max_requests=20, time_window=3600)
 async def generate_backend(
     request: Request,
@@ -303,7 +303,7 @@ async def generate_backend(
         request, version, data, api_key, "backend"
     )
 
-@app.post("/aeodos/generate/debug", tags=["generation"])
+@app.post("/Aoede/generate/debug", tags=["generation"])
 @rate_limit(max_requests=50, time_window=3600)
 async def generate_debug(
     request: Request,
@@ -317,7 +317,7 @@ async def generate_debug(
         request, version, data, api_key, "debug"
     )
 
-@app.post("/aeodos/generate/project", tags=["generation"])
+@app.post("/Aoede/generate/project", tags=["generation"])
 @rate_limit(max_requests=10, time_window=3600)  # Global rate limit
 async def generate_project(
     request: Request,
@@ -361,7 +361,7 @@ async def generate_project(
         return {
             "message": "Project generation started",
             "project_id": project_id,
-            "status_check_url": f"/aeodos/projects/{project_id}/status",
+            "status_check_url": f"/Aoede/projects/{project_id}/status",
             "estimated_time": "5-10 minutes",
             "tier": user.subscription_tier
         }
@@ -376,7 +376,7 @@ async def generate_project(
             }
         )
 
-@app.get("/aeodos/projects/{project_id}/status", tags=["generation"])
+@app.get("/Aoede/projects/{project_id}/status", tags=["generation"])
 async def get_project_status(
     project_id: str,
     api_key: str = Depends(verify_api_key)
@@ -479,7 +479,7 @@ async def handle_generation_request(
         )
 
 # Enhanced health check endpoint
-@app.get("/aeodos/health", tags=["monitoring"])
+@app.get("/Aoede/health", tags=["monitoring"])
 async def health_check():
     """Enhanced health check endpoint"""
     return {
@@ -547,7 +547,7 @@ if __name__ == "__main__":
 
     # Start server with enterprise-grade configuration
     try:
-        logger.info(f"Starting Aeodos API on {host}:{port}")
+        logger.info(f"Starting Aoede API on {host}:{port}")
         uvicorn.run(
             "main:app",
             host=host,

@@ -1,11 +1,11 @@
-window.Aeodos = window.Aeodos || {};
+window.Aoede = window.Aoede || {};
 
-if (!window.Aeodos.CodePreview) {
-    window.Aeodos.CodePreview = class CodePreview {
+if (!window.Aoede.CodePreview) {
+    window.Aoede.CodePreview = class CodePreview {
         constructor() {
             this.preview = document.getElementById('codePreview');
             this.codeSnippet = `// Example website generation
-const website = await aeodos.generate({
+const website = await Aoede.generate({
     description: "Modern business website",
     style: "minimal",
     pages: ["home", "about", "contact"]
@@ -15,7 +15,7 @@ const website = await aeodos.generate({
 {
     "status": "success",
     "projectId": "proj_abc123",
-    "url": "https://aeodos.canopus.software/preview/abc123"
+    "url": "https://Aoede.canopus.software/preview/abc123"
 }`;
             
             this.init();
@@ -72,6 +72,6 @@ const website = await aeodos.generate({
 // Initialize only when DOM is ready and not already initialized
 if (!window.codePreview) {
     document.addEventListener('DOMContentLoaded', () => {
-        window.codePreview = new window.Aeodos.CodePreview();
+        window.codePreview = new window.Aoede.CodePreview();
     });
 }

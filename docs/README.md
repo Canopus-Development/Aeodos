@@ -1,8 +1,8 @@
-# Aeodos Technical Documentation
+# Aoede Technical Documentation
 
 ## Overview
 
-Aeodos is a FastAPI-based open-source website generation engine that uses AI to create modern, responsive websites. This documentation covers technical aspects, implementation details, and usage guidelines.
+Aoede is a FastAPI-based open-source website generation engine that uses AI to create modern, responsive websites. This documentation covers technical aspects, implementation details, and usage guidelines.
 
 ## Architecture
 
@@ -120,6 +120,6 @@ See our [Contributing Guide](../CONTRIBUTING.md) for:
 
 ## Support
 
-- [GitHub Issues](https://github.com/canopus-development/aeodos/issues)
+- [GitHub Issues](https://github.com/canopus-development/Aoede/issues)
 - [Discord Community](https://discord.gg/JUhv27kzcJ)
 - Email: support@canopus.software

@@ -1,1 +1,1 @@
-"Service Package of Aeodos"
+"Service Package of Aoede"

@@ -40,7 +40,7 @@ class ProjectGenerationLimiter:
                         detail={
                             "message": "Daily project generation limit reached",
                             "next_available": last_generation + timedelta(days=1),
-                            "upgrade_url": "/aeodos/subscription/upgrade"
+                            "upgrade_url": "/Aoede/subscription/upgrade"
                         }
                     )
         

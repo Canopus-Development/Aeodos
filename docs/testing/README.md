@@ -1,8 +1,8 @@
 
-# Aeodos Testing Guide
+# Aoede Testing Guide
 
 ## Overview
-Robust testing ensures Aeodos remains stable and reliable. This guide describes testing procedures and best practices.
+Robust testing ensures Aoede remains stable and reliable. This guide describes testing procedures and best practices.
 
 ## Types of Tests
 - **Unit Tests**: Verify individual components.  

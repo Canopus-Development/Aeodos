@@ -135,8 +135,8 @@ class NotificationManager:
             user_id,
             {
                 "type": "welcome",
-                "title": "Welcome to Aeodos!",
-                "message": f"Welcome {company} to Aeodos! Your account has been successfully created.",
+                "title": "Welcome to Aoede!",
+                "message": f"Welcome {company} to Aoede! Your account has been successfully created.",
                 "timestamp": datetime.utcnow().isoformat()
             }
         )

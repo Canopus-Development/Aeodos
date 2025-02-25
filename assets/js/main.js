@@ -1,9 +1,9 @@
-window.Aeodos = window.Aeodos || {};
+window.Aoede = window.Aoede || {};
 
-if (!window.Aeodos.UI) {
-    window.Aeodos.UI = class AeodosUI {
+if (!window.Aoede.UI) {
+    window.Aoede.UI = class AoedeUI {
         constructor() {
-            this.apiEndpoint = 'http://api.canopus.software/aeodos';
+            this.apiEndpoint = 'http://api.canopus.software/Aoede';
             this.modal = document.getElementById('apiKeyModal');
             this.init();
             this.initStatCounters();
@@ -41,7 +41,7 @@ if (!window.Aeodos.UI) {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h2>Get Your API Key</h2>
-                            <p>Start building with Aeodos today</p>
+                            <p>Start building with Aoede today</p>
                         </div>
                         <form id="apiKeyForm" class="api-key-form">
                             <div class="form-group">
@@ -237,7 +237,7 @@ if (!window.Aeodos.UI) {
                         </button>
                     </div>
                     <p class="warning">⚠️ This key will only be shown once!</p>
-                    <button class="primary-btn" onclick="aeodosUI.hideModal()">
+                    <button class="primary-btn" onclick="AoedeUI.hideModal()">
                         Done
                     </button>
                 </div>
@@ -393,8 +393,8 @@ if (!window.Aeodos.UI) {
 }
 
 // Initialize only if not already done
-if (!window.aeodosUI) {
-    window.aeodosUI = new window.Aeodos.UI();
+if (!window.AoedeUI) {
+    window.AoedeUI = new window.Aoede.UI();
 }
 
 // Handle errors globally

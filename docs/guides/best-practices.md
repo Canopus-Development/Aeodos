@@ -11,7 +11,7 @@
 2. **Error Handling**
    ```javascript
    try {
-       const result = await aeodos.generate(config);
+       const result = await Aoede.generate(config);
    } catch (error) {
        if (error.code === 'RATE_LIMIT_EXCEEDED') {
            // Implement exponential backoff
@@ -33,13 +33,13 @@
    ```javascript
    // Good
    const [website, assets] = await Promise.all([
-       aeodos.generateWebsite(config),
-       aeodos.generateAssets(config)
+       Aoede.generateWebsite(config),
+       Aoede.generateAssets(config)
    ]);
 
    // Avoid
-   const website = await aeodos.generateWebsite(config);
-   const assets = await aeodos.generateAssets(config);
+   const website = await Aoede.generateWebsite(config);
+   const assets = await Aoede.generateAssets(config);
    ```
 
 2. **Caching**

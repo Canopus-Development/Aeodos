@@ -1,4 +1,4 @@
-# Getting Started with Aeodos API
+# Getting Started with Aoede API
 
 ## Prerequisites
 - Valid API key
@@ -9,28 +9,28 @@
 
 ### Using npm
 ```bash
-npm install @aeodos/client
+npm install @Aoede/client
 ```
 
 ### Using pip
 ```bash
-pip install aeodos-client
+pip install Aoede-client
 ```
 
 ### Using Composer
 ```bash
-composer require aeodos/client
+composer require Aoede/client
 ```
 
 ### Using Go modules
 ```bash
-go get github.com/canopus-development/aeodos-client
+go get github.com/canopus-development/Aoede-client
 ```
 
 ## Authentication
 All API requests require authentication using your API key. To obtain an API key:
 
-1. Visit [Aeodos Dashboard](https://aeodos.canopus.software/dashboard)
+1. Visit [Aoede Dashboard](https://Aoede.canopus.software/dashboard)
 2. Register for an account
 3. Generate an API key
 
@@ -43,13 +43,13 @@ Authorization: Bearer YOUR_API_KEY
 
 ### JavaScript Example
 ```javascript
-const Aeodos = require('@aeodos/client');
+const Aoede = require('@Aoede/client');
 
-const aeodos = new Aeodos('YOUR_API_KEY');
+const Aoede = new Aoede('YOUR_API_KEY');
 
 async function generateWebsite() {
     try {
-        const website = await aeodos.generate({
+        const website = await Aoede.generate({
             description: "A modern business website",
             style: "minimal",
             pages: ["home", "about", "contact"]

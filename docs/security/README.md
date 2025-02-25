@@ -1,8 +1,8 @@
 
-# Aeodos Security Documentation
+# Aoede Security Documentation
 
 ## Overview
-Security in Aeodos protects user data, offers safe APIs, and ensures compliance.
+Security in Aoede protects user data, offers safe APIs, and ensures compliance.
 
 ## Authentication & Authorization
 - API keys for secure endpoints.

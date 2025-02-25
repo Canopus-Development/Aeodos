@@ -1,7 +1,7 @@
-# Aeodos Configuration Guide
+# Aoede Configuration Guide
 
 ## Overview
-Configuration is managed via environment variables in Aeodos. This guide helps you customize the application for development, staging, or production.
+Configuration is managed via environment variables in Aoede. This guide helps you customize the application for development, staging, or production.
 
 ## Environment Variables
 Use the `.env` file to set critical configuration values.
@@ -15,7 +15,7 @@ DEBUG=True
 WORKERS=4
 
 # Database
-DATABASE_URL=postgresql://user:pass@localhost/aeodos
+DATABASE_URL=postgresql://user:pass@localhost/Aoede
 
 # Redis
 REDIS_URL=redis://localhost:6379

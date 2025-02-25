@@ -1,7 +1,7 @@
-window.Aeodos = window.Aeodos || {};
+window.Aoede = window.Aoede || {};
 
-if (!window.Aeodos.PlaygroundManager) {
-    window.Aeodos.PlaygroundManager = class PlaygroundManager {
+if (!window.Aoede.PlaygroundManager) {
+    window.Aoede.PlaygroundManager = class PlaygroundManager {
         constructor() {
             // Initialize only if we're on the right page
             const playgroundElements = {
@@ -18,7 +18,7 @@ if (!window.Aeodos.PlaygroundManager) {
             // Only proceed if we find the required elements
             if (playgroundElements.description || playgroundElements.style) {
                 this.elements = playgroundElements;
-                this.apiEndpoint = 'http://api.canopus.software/aeodos';
+                this.apiEndpoint = 'http://api.canopus.software/Aoede';
                 this.demoApiKey = 'demo_key_123';
                 this.init();
             }
@@ -145,6 +145,6 @@ if (!window.Aeodos.PlaygroundManager) {
 // Initialize only when DOM is ready and not already initialized
 if (!window.playground) {
     document.addEventListener('DOMContentLoaded', () => {
-        window.playground = new window.Aeodos.PlaygroundManager();
+        window.playground = new window.Aoede.PlaygroundManager();
     });
 }

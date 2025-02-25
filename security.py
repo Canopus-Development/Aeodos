@@ -23,7 +23,7 @@ class SecurityConfig:
     SECRET_KEY = os.getenv("SECRET_KEY")
     ALGORITHM = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES = 30
-    API_KEY_PREFIX = "AEODOS-KEY"
+    API_KEY_PREFIX = "Aoede-KEY"
     MAX_FAILED_ATTEMPTS = 5
     LOCKOUT_DURATION = 15  # minutes
     
@@ -58,8 +58,8 @@ class APIKeyManager:
     def track_usage(self, api_key: str, path: str):
         """Track API usage and enforce rate limits"""
         # Update path to remove /api prefix if present
-        path = path.replace("/api/v1/", "/aeodos/")
-        path = path.replace("/api/", "/aeodos/")
+        path = path.replace("/api/v1/", "/Aoede/")
+        path = path.replace("/api/", "/Aoede/")
         
         key = f"usage:{api_key}:{path}"
         pipe = self.redis_client.pipeline()

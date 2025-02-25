@@ -9,7 +9,7 @@
 
 ## Reporting a Vulnerability
 
-We take the security of Aeodos seriously. If you believe you have found a security vulnerability, please report it to us as described below.
+We take the security of Aoede seriously. If you believe you have found a security vulnerability, please report it to us as described below.
 
 ### Reporting Process
 
@@ -48,7 +48,7 @@ We take the security of Aeodos seriously. If you believe you have found a securi
 
 ## Security Features
 
-Aeodos implements several security measures:
+Aoede implements several security measures:
 
 1. **Authentication**
    - API key authentication

@@ -1,8 +1,8 @@
 
-# Aeodos Monitoring Guide
+# Aoede Monitoring Guide
 
 ## Overview
-Monitoring ensures Aeodos remains healthy and performant under various loads. This guide outlines key metrics, tools, and best practices.
+Monitoring ensures Aoede remains healthy and performant under various loads. This guide outlines key metrics, tools, and best practices.
 
 ## Logging Strategy
 - Use structured logs with JSON or logfmt.

@@ -1,8 +1,8 @@
-# Aeodos Architecture
+# Aoede Architecture
 
 ## System Overview
 
-Aeodos is built on a modern, scalable architecture that combines FastAPI's high performance with AI-powered generation capabilities.
+Aoede is built on a modern, scalable architecture that combines FastAPI's high performance with AI-powered generation capabilities.
 
 ```mermaid
 graph TB
@@ -52,7 +52,7 @@ from app.core.auth import get_current_user
 from app.core.rate_limit import rate_limiter
 
 app = FastAPI(
-    title="Aeodos API",
+    title="Aoede API",
     description="AI-Powered Website Generation Engine",
     version="1.0.0"
 )
@@ -181,7 +181,7 @@ graph LR
 ### Logging System
 ```python
 class LogConfig:
-    LOGGER_NAME = "aeodos"
+    LOGGER_NAME = "Aoede"
     LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     LOG_LEVEL = "INFO"
 
@@ -203,7 +203,7 @@ class LogConfig:
             },
         },
         "loggers": {
-            "aeodos": {"handlers": ["default"], "level": LOG_LEVEL},
+            "Aoede": {"handlers": ["default"], "level": LOG_LEVEL},
         },
     }
 ```

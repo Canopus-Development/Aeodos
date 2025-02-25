@@ -6,12 +6,12 @@
 
 #### JavaScript (Node.js)
 ```javascript
-const Aeodos = require('@aeodos/client');
-const aeodos = new Aeodos(process.env.AEODOS_API_KEY);
+const Aoede = require('@Aoede/client');
+const Aoede = new Aoede(process.env.Aoede_API_KEY);
 
 async function generateBusinessWebsite() {
     try {
-        const website = await aeodos.generate({
+        const website = await Aoede.generate({
             description: "A professional business website with modern design",
             style: "corporate",
             pages: ["home", "about", "services", "contact"],
@@ -29,14 +29,14 @@ async function generateBusinessWebsite() {
 
 #### Python
 ```python
-from aeodos import Client
+from Aoede import Client
 import os
 
-aeodos = Client(os.getenv('AEODOS_API_KEY'))
+Aoede = Client(os.getenv('Aoede_API_KEY'))
 
 async def generate_business_website():
     try:
-        website = await aeodos.generate(
+        website = await Aoede.generate(
             description="A professional business website with modern design",
             style="corporate",
             pages=["home", "about", "services", "contact"],
@@ -86,7 +86,7 @@ const template = {
     }
 };
 
-const website = await aeodos.generate({
+const website = await Aoede.generate({
     description: "Custom business website",
     template: template,
     pages: ["home", "about", "services"]
@@ -99,7 +99,7 @@ const website = await aeodos.generate({
 const websiteId = "web_abc123";
 
 // Using WebSocket connection
-const statusSocket = aeodos.subscribeToStatus(websiteId);
+const statusSocket = Aoede.subscribeToStatus(websiteId);
 
 statusSocket.on('progress', (status) => {
     console.log(`Generation progress: ${status.percentage}%`);
@@ -119,9 +119,9 @@ statusSocket.on('error', (error) => {
 ### Error Handling and Retries
 
 ```javascript
-class AeodosClient {
+class AoedeClient {
     constructor(apiKey, options = {}) {
-        this.client = new Aeodos(apiKey);
+        this.client = new Aoede(apiKey);
         this.maxRetries = options.maxRetries || 3;
         this.backoffFactor = options.backoffFactor || 1.5;
     }

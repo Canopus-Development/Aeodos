@@ -1,18 +1,18 @@
-window.Aeodos = window.Aeodos || {};
+window.Aoede = window.Aoede || {};
 
-if (!window.Aeodos.CodeExamplesManager) {
-    window.Aeodos.CodeExamplesManager = class CodeExamplesManager {
+if (!window.Aoede.CodeExamplesManager) {
+    window.Aoede.CodeExamplesManager = class CodeExamplesManager {
         constructor() {
             this.currentLanguage = 'curl';
             this.codeExamples = {
                 curl: {
-                    authentication: `curl -X POST http://api.canopus.software/aeodos/keys/generate \
+                    authentication: `curl -X POST http://api.canopus.software/Aoede/keys/generate \
 -H "Content-Type: application/json" \
 -d '{
     "email": "your@email.com",
     "company_name": "Your Company"
 }'`,
-                    websiteGeneration: `curl -X POST http://api.canopus.software/aeodos/generate/website \
+                    websiteGeneration: `curl -X POST http://api.canopus.software/Aoede/generate/website \
 -H "Authorization: Bearer YOUR_API_KEY" \
 -H "Content-Type: application/json" \
 -d '{
@@ -20,14 +20,14 @@ if (!window.Aeodos.CodeExamplesManager) {
     "style": "minimal",
     "pages": ["home", "about", "contact"]
 }'`,
-                    projectStatus: `curl http://api.canopus.software/aeodos/projects/PROJECT_ID/status \
+                    projectStatus: `curl http://api.canopus.software/Aoede/projects/PROJECT_ID/status \
 -H "Authorization: Bearer YOUR_API_KEY"`
                 },
                 python: {
                     authentication: `import requests
 
 response = requests.post(
-    'http://api.canopus.software/aeodos/keys/generate',
+    'http://api.canopus.software/Aoede/keys/generate',
     json={
         'email': 'your@email.com',
         'company_name': 'Your Company'
@@ -38,7 +38,7 @@ api_key = response.json()['api_key']`,
                     websiteGeneration: `import requests
 
 response = requests.post(
-    'http://api.canopus.software/aeodos/generate/website',
+    'http://api.canopus.software/Aoede/generate/website',
     headers={'Authorization': 'Bearer YOUR_API_KEY'},
     json={
         'description': 'A modern business website',
@@ -51,7 +51,7 @@ project = response.json()`,
                     projectStatus: `import requests
 
 response = requests.get(
-    'http://api.canopus.software/aeodos/projects/PROJECT_ID/status',
+    'http://api.canopus.software/Aoede/projects/PROJECT_ID/status',
     headers={'Authorization': 'Bearer YOUR_API_KEY'}
 )
 
@@ -59,7 +59,7 @@ status = response.json()`
                 },
                 javascript: {
                     authentication: `// Using fetch API
-const response = await fetch('http://api.canopus.software/aeodos/keys/generate', {
+const response = await fetch('http://api.canopus.software/Aoede/keys/generate', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ const response = await fetch('http://api.canopus.software/aeodos/keys/generate',
 
 const { api_key } = await response.json();`,
                     websiteGeneration: `// Generate website
-const response = await fetch('http://api.canopus.software/aeodos/generate/website', {
+const response = await fetch('http://api.canopus.software/Aoede/generate/website', {
     method: 'POST',
     headers: {
         'Authorization': 'Bearer YOUR_API_KEY',
@@ -88,7 +88,7 @@ const response = await fetch('http://api.canopus.software/aeodos/generate/websit
 const project = await response.json();`,
                     projectStatus: `// Check project status
 const response = await fetch(
-    'http://api.canopus.software/aeodos/projects/PROJECT_ID/status',
+    'http://api.canopus.software/Aoede/projects/PROJECT_ID/status',
     {
         headers: {
             'Authorization': 'Bearer YOUR_API_KEY'
@@ -100,7 +100,7 @@ const status = await response.json();`
                 },
                 php: {
                     authentication: `<?php
-$ch = curl_init('http://api.canopus.software/aeodos/keys/generate');
+$ch = curl_init('http://api.canopus.software/Aoede/keys/generate');
 $data = [
     'email' => 'your@email.com',
     'company_name' => 'Your Company'
@@ -118,7 +118,7 @@ $result = json_decode($response, true);
 $api_key = $result['api_key'];
 curl_close($ch);`,
                     websiteGeneration: `<?php
-$ch = curl_init('http://api.canopus.software/aeodos/generate/website');
+$ch = curl_init('http://api.canopus.software/Aoede/generate/website');
 $data = [
     'description' => 'A modern business website',
     'style' => 'minimal',
@@ -139,7 +139,7 @@ $response = curl_exec($ch);
 $project = json_decode($response, true);
 curl_close($ch);`,
                     projectStatus: `<?php
-$ch = curl_init('http://api.canopus.software/aeodos/projects/PROJECT_ID/status');
+$ch = curl_init('http://api.canopus.software/Aoede/projects/PROJECT_ID/status');
 
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
@@ -168,7 +168,7 @@ func main() {
     jsonData, _ := json.Marshal(data)
     
     req, _ := http.NewRequest("POST", 
-        "http://api.canopus.software/aeodos/keys/generate",
+        "http://api.canopus.software/Aoede/keys/generate",
         bytes.NewBuffer(jsonData))
         
     req.Header.Set("Content-Type", "application/json")
@@ -198,7 +198,7 @@ func main() {
     jsonData, _ := json.Marshal(data)
     
     req, _ := http.NewRequest("POST",
-        "http://api.canopus.software/aeodos/generate/website",
+        "http://api.canopus.software/Aoede/generate/website",
         bytes.NewBuffer(jsonData))
         
     req.Header.Set("Content-Type", "application/json")
@@ -219,7 +219,7 @@ import (
 
 func main() {
     req, _ := http.NewRequest("GET",
-        "http://api.canopus.software/aeodos/projects/PROJECT_ID/status",
+        "http://api.canopus.software/Aoede/projects/PROJECT_ID/status",
         nil)
         
     req.Header.Set("Authorization", "Bearer YOUR_API_KEY")
@@ -409,5 +409,5 @@ func main() {
 
 // Initialize only if not already done
 if (!window.codeExamples) {
-    window.codeExamples = new window.Aeodos.CodeExamplesManager();
+    window.codeExamples = new window.Aoede.CodeExamplesManager();
 }

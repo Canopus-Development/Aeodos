@@ -12,8 +12,8 @@
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/canopus-development/aeodos.git
-cd aeodos
+git clone https://github.com/canopus-development/Aoede.git
+cd Aoede
 ```
 
 2. Create virtual environment:
@@ -49,7 +49,7 @@ uvicorn app.main:app --reload --port 7297
 ## Project Structure
 
 ```
-aeodos/
+Aoede/
 ├── app/
 │   ├── api/           # API endpoints
 │   ├── core/          # Core functionality

@@ -1,8 +1,8 @@
 
-# Aeodos Installation Guide
+# Aoede Installation Guide
 
 ## Overview
-Aeodos provides a robust platform for AI-driven website generation. This guide walks you through the initial installation and setup.
+Aoede provides a robust platform for AI-driven website generation. This guide walks you through the initial installation and setup.
 
 ## Prerequisites
 - Python 3.9+
@@ -14,8 +14,8 @@ Aeodos provides a robust platform for AI-driven website generation. This guide w
 
 1. Clone the Repository  
    ```bash
-   git clone https://github.com/canopus-development/aeodos.git
-   cd aeodos
+   git clone https://github.com/canopus-development/Aoede.git
+   cd Aoede
    ```
 
 2. Create and Activate Virtual Environment  

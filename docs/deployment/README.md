@@ -1,8 +1,8 @@
 
-# Aeodos Deployment Guide
+# Aoede Deployment Guide
 
 ## Overview
-This guide outlines how to deploy Aeodos in a production environment using Docker, Kubernetes, or traditional servers.
+This guide outlines how to deploy Aoede in a production environment using Docker, Kubernetes, or traditional servers.
 
 ## Docker Deployment
 1. Install Docker & Docker Compose  
@@ -15,7 +15,7 @@ This guide outlines how to deploy Aeodos in a production environment using Docke
        ports:
          - "7297:7297"
        environment:
-         - DATABASE_URL=postgresql://user:pass@db/aeodos
+         - DATABASE_URL=postgresql://user:pass@db/Aoede
          - REDIS_URL=redis://redis:6379
          - SECRET_KEY=super-secret
        depends_on:
